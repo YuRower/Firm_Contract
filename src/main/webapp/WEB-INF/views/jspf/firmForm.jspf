@@ -1,0 +1,18 @@
+ <table>
+            <form:hidden path="id"/>
+            <tr>
+                <td>Name:</td>
+                <td><form:input path="name" /></td>
+            </tr>
+            <tr>
+                <td>Shef:</td>
+                <td><form:input path="shef" /></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><form:input path="address" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Save"></td>
+            </tr>
+</table>
