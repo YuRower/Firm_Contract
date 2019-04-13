@@ -24,7 +24,7 @@ public class ContractDaoImpl implements ContractDao {
             + "id_firm = ? and (datastart between ? and ?)";
     private static final String MYSQL_INSERT_CONTRACT = "insert into dogovor values (default, ?, ?, ?, ? , ? ,?,?)";
     private static final String MYSQL_DELETE_CONTRACT = "delete from dogovor where id_d = ?";
-    private static final String MYSQL_UPDATE_CONTRACT = "update dogovor set  numbered = ?,"
+    private static final String MYSQL_UPDATE_CONTRACT = "update dogovor set id_firm= ? ,  numbered = ?,"
             + " named= ? , sumd = ? , datastart = ? , datafinish = ? , avans = ? where id_d = ?";
     private static final String ID = "id_d";
     private static final String ID_FIRM = "id_firm";
@@ -76,15 +76,15 @@ public class ContractDaoImpl implements ContractDao {
 
     @Override
     public void update(Contract contract) {
-        jdbcTemplate.update(MYSQL_UPDATE_CONTRACT, contract.getNumbered(),
-                contract.getNamed(), contract.getSumd(),
+        jdbcTemplate.update(MYSQL_UPDATE_CONTRACT, contract.getIdFirm(),
+                contract.getNumbered(), contract.getNamed(), contract.getSumd(),
                 contract.getDataStart(), contract.getDataFinish(),
                 contract.getAvans(), contract.getId());
     }
 
     @Override
-    public List<Contract> get(int contractID) {
-        return jdbcTemplate.query(MYSQL_FIND_CONTRACTS_BY_FIRM_ID + contractID,
+    public List<Contract> get(int firmId) {
+        return jdbcTemplate.query(MYSQL_FIND_CONTRACTS_BY_FIRM_ID + firmId,
                 new ContractMapper());
     }
 

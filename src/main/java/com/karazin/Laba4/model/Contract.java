@@ -100,9 +100,10 @@ public class Contract {
 
     @Override
     public String toString() {
-        return "Contract [numbered=" + numbered + ", named=" + named
+        return "Contract [id=" + id + ", idFirm=" + idFirm + ", numbered="
+                + numbered + ", named=" + named + ", sumd=" + sumd
                 + ", dataStart=" + dataStart + ", dataFinish=" + dataFinish
-                + "]";
+                + ", avans=" + avans + "]";
     }
 
 }

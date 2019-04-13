@@ -14,7 +14,7 @@
          <h1>All Contracts</h1>
          <h3><a href="newContract">New Contract</a></h3>
          <table border="1">
-            <th>idFirm</th>
+            <th>Firm</th>
             <th>Numbered</th>
             <th>Named</th>
             <th>Sumd</th>
@@ -24,7 +24,7 @@
             <th>Action</th>
             <c:forEach var="info_Contract" items="${contractList}" varStatus="status">
                <tr>
-                  <td>${info_Contract.idFirm}</td>
+                  <td>${firmName}</td>
                   <td>${info_Contract.numbered}</td>
                   <td > ${info_Contract.named}</td>
                   <td>${info_Contract.sumd}</td>
@@ -38,7 +38,6 @@
                      &nbsp;&nbsp;&nbsp;&nbsp;
                   </td>
                </tr>
-                     <c:set var = "idFirm" scope = "request" value = "${info_Contract.idFirm}"/>
             </c:forEach>
          </table>
          <form action="findByDate">

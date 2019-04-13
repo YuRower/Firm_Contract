@@ -1,35 +1,45 @@
- <table>       
-                    <form:hidden path="id"/>
-        
-            <tr>
-                <td>id_firm:</td>
-                <td><form:input path="idFirm" /></td>
-            </tr>
-            <tr>
-                <td>Numbered:</td>
-                <td><form:input path="numbered" /></td>
-            </tr>
-            <tr>
-                <td>Named:</td>
-                <td><form:input path="named" /></td>
-            </tr>
-            <tr>
-                <td>Sumd:</td>
-                <td><form:input path="sumd" /></td>
-            </tr>
-            <tr>
-                <td>DataStart:</td>
-                <td><form:input   path="dataStart" /></td>
-            </tr>
-            <tr>
-                <td>DataFinish:</td>
-                <td><form:input   path="dataFinish" /></td>
-            </tr>
-             <tr>
-                <td>Avans:</td>
-                <td><form:input path="avans" /></td>
-            </tr>
-             <tr>
-                <td colspan="2" align="center"><input type="submit" value="Save"></td>
-            </tr>
- </table>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<table>
+	<form:hidden path="id" />
+
+	<tr>
+		<td>id_firm:</td>
+		<td>
+				<!--  <option disabled selected value>-- select an option --</option> -->
+		<form:select path="idFirm">
+                <form:options items="${firmList}" />
+				       </form:select>
+                                </td>
+
+	</td>
+	</tr>
+	<tr>
+		<td>Numbered:</td>
+		<td><form:input path="numbered" /></td>
+	</tr>
+	<tr>
+		<td>Named:</td>
+		<td><form:input path="named" /></td>
+	</tr>
+	<tr>
+		<td>Sumd:</td>
+		<td><form:input path="sumd" /></td>
+	</tr>
+	<tr>
+		<td>DataStart:</td>
+		<td><form:input path="dataStart" /></td>
+	</tr>
+	<tr>
+		<td>DataFinish:</td>
+		<td><form:input path="dataFinish" /></td>
+	</tr>
+	<tr>
+		<td>Avans:</td>
+		<td><form:input path="avans" /></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><input type="submit" value="Save"></td>
+	</tr>
+</table>
